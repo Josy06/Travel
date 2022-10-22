@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        width: 100px;
+        height: 500px;
+        background-color: blueviolet;
+    }
+    .register{
+        height: 320px;
+        width: 270px;
+        background-color: violet;
+        margin-top: 153px;
+        margin-left: 516px;
+    }
+    .title{
+    text-align: center;
+    padding: 8px;
+    }
+    .user{
+    margin-left: 40px;
+    text-align: center;
+    }
+    .first{
+    margin-left: 40px;
+    text-align: center;
+    margin-top: 7px;
+    }
+    .second{
+    margin-left: 40px;
+    text-align: center;
+    margin-top: 7px;
+    }
+    .email{
+    margin-left: 40px;
+    text-align: center;
+    margin-top: 7px;
+    }
+    .pass{
+    margin-left: 40px;
+    text-align: center;
+    margin-top: 7px;
+    }
+    .pass2{
+    margin-left: 40px;
+    text-align: center;
+    margin-top: 7px;
+    }
+    .sub{
+    margin-left: 95px;
+    text-align: center;
+    margin-top: 15px;
+    }
+</style>
+<body>
+
+<div class="register">
+<h1 class="title" >Registration</h1>
+<form action="register" method="POST">
+    {% csrf_token %}
+    <input type="text" class="user" name="username" placeholder="Enter your username"><br>
+       <input type="text" class="first" name="first_name" placeholder="Enter your first name"><br>
+       <input type="text" class="second" name="last_name" placeholder="Enter your last name"><br>
+       <input type="email" class="email" name="email_id" placeholder="Enter your email id"><br>
+       <input type="password" class="pass" name="password" placeholder="Enter your password"><br>
+     <input type="password" class="pass2" name="password1" placeholder="Confirm your password"><br>
+    <input class="sub" type="submit">
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</div>
+</body>
+</html>

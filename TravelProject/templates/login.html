@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<style>
+  body{
+    margin: 0;
+    width: 100%;
+    height: 500px;
+    background-color:pink;
+  }
+  .login{
+    width: 300px;
+    height: 270px;
+    background-color: yellowgreen;
+    margin-top: 175px;
+    margin-left: 500px;
+   
+  }
+  .title{
+     text-align: center;
+     padding-top: 26px;
+  }
+  .user{
+     margin-left: 55px;
+    padding: 2px;
+    text-align: center;
+  }
+  .pass{
+     margin-left: 55px;
+    padding: 2px;
+    text-align: center;
+    margin-top:18px;
+  }
+  .submit{
+  margin-left: 112px;
+    margin-top: 26px;
+    }
+</style>
+<body>
+  <div class="login">
+      <h1 class="title">LOGIN</h1>
+<form  action="login" method="POST">
+    {% csrf_token %}
+  <input class="user" type="text"  name="username" placeholder="Enter your Username"><br>
+  <input class="pass" type="password" name="password" placeholder="Enter your Password"><br>
+  <input class="submit" type="submit">
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}</div>
+</body>
+</html>
